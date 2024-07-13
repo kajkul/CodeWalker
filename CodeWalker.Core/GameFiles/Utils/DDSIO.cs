@@ -544,8 +544,8 @@ namespace CodeWalker.Utils
             int add = 0;
             for (int i = 0; i < img.MipMapLevels; i++)
             {
-                images[i].width = img.Width / div;
-                images[i].height = img.Height / div;
+                images[i].width = img.Width / div == 0 ? 1 : img.Width / div;
+                images[i].height = img.Height / div == 0 ? 1 : img.Height / div;
                 images[i].format = format; //(DXGI_FORMAT)img.Format;
                 images[i].pixels = buf + add;
 
